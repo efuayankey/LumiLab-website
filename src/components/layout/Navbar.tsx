@@ -22,19 +22,28 @@ export default function Navbar() {
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-6">
             <Link href="#home" className="text-slate-700 hover:text-violet-600 transition-colors font-medium text-sm">
-              Home
-            </Link>
-            <Link href="#how-it-works" className="text-slate-700 hover:text-violet-600 transition-colors font-medium text-sm">
-              How It Works
-            </Link>
-            <Link href="#shop" className="text-slate-700 hover:text-violet-600 transition-colors font-medium text-sm">
-              Shop
+              HOME
             </Link>
             <Link href="#about" className="text-slate-700 hover:text-violet-600 transition-colors font-medium text-sm">
-              About Us
+              ABOUT US
+            </Link>
+            <Link href="#how-it-works" className="text-slate-700 hover:text-violet-600 transition-colors font-medium text-sm">
+              HOW IT WORKS
+            </Link>
+            <Link href="#risk-profile" className="text-slate-700 hover:text-violet-600 transition-colors font-medium text-sm">
+              RISK PROFILE
+            </Link>
+            <Link href="/products" className="text-slate-700 hover:text-violet-600 transition-colors font-medium text-sm">
+              PRODUCTS
+            </Link>
+            <Link href="#shop" className="text-slate-700 hover:text-violet-600 transition-colors font-medium text-sm">
+              SHOP
+            </Link>
+            <Link href="#faq" className="text-slate-700 hover:text-violet-600 transition-colors font-medium text-sm">
+              FAQS
             </Link>
             <Link href="#contact" className="text-slate-700 hover:text-violet-600 transition-colors font-medium text-sm">
-              Contact
+              CONTACT
             </Link>
           </div>
           

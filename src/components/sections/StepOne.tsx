@@ -10,7 +10,7 @@ export default function StepOne() {
   
   return (
     <>
-    <section className="min-h-screen bg-gradient-to-br from-violet-100 via-white to-violet-50 flex flex-col justify-center py-20 relative overflow-hidden">
+    <section id="how-it-works" className="min-h-screen bg-gradient-to-br from-violet-100 via-white to-violet-50 flex flex-col justify-center py-20 relative overflow-hidden">
       {/* Glossy overlays */}
       <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-violet-400/5 to-purple-500/8 z-0" />
       <div className="absolute inset-0 bg-gradient-to-t from-violet-900/5 via-transparent to-violet-200/3 z-0" />
