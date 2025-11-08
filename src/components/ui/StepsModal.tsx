@@ -134,7 +134,7 @@ export default function StepsModal({ isOpen, onClose }: StepsModalProps) {
           </div>
 
           {/* Step Content */}
-          <div className="px-8 py-8 min-h-[450px] bg-gradient-to-br from-violet-100/30 via-white/80 to-violet-50/40 backdrop-blur-sm relative z-10">
+          <div className="px-16 py-8 min-h-[450px] bg-gradient-to-br from-violet-100/30 via-white/80 to-violet-50/40 backdrop-blur-sm relative z-10">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentStep}
@@ -147,12 +147,12 @@ export default function StepsModal({ isOpen, onClose }: StepsModalProps) {
                 {/* Left - Image */}
                 <div className="lg:col-span-1 flex justify-center">
                   <div className="bg-slate-50 rounded-3xl p-6 shadow-soft">
-                    <div className="w-full h-48 bg-gradient-to-br from-violet-100 to-violet-50 rounded-2xl overflow-hidden">
+                    <div className="w-full h-64 bg-gradient-to-br from-violet-100 to-violet-50 rounded-2xl overflow-hidden">
                       <Image 
                         src={steps[currentStep].image} 
                         alt={steps[currentStep].title}
-                        width={300}
-                        height={200}
+                        width={400}
+                        height={300}
                         className="w-full h-full object-cover"
                       />
                     </div>

@@ -79,14 +79,14 @@ export default function StepOne() {
             className="flex justify-center"
           >
             <div className="bg-slate-50 rounded-3xl p-8 shadow-soft">
-              <div className="w-full h-80 bg-gradient-to-br from-violet-100 to-violet-50 rounded-2xl flex items-center justify-center">
-                {/* Placeholder for kit image */}
-                <div className="text-center">
-                  <div className="w-24 h-24 bg-violet-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl">📦</span>
-                  </div>
-                  <p className="text-slate-600 text-sm">Kit Image</p>
-                </div>
+              <div className="w-full h-80 bg-gradient-to-br from-violet-100 to-violet-50 rounded-2xl overflow-hidden">
+                <Image 
+                  src="/images/step1-kit.jpg" 
+                  alt="LumiLab skincare testing kit"
+                  width={400}
+                  height={320}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </motion.div>
