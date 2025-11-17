@@ -91,7 +91,7 @@ export default function StepsModal({ isOpen, onClose }: StepsModalProps) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
           transition={{ type: "spring", duration: 0.5 }}
-          className="bg-white rounded-3xl shadow-2xl max-w-7xl w-full max-h-[95vh] overflow-hidden relative border border-slate-200"
+          className="bg-white rounded-3xl shadow-2xl max-w-7xl w-full max-h-[95vh] overflow-hidden relative border border-slate-200 mx-4"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Single subtle floating element */}
@@ -129,7 +129,7 @@ export default function StepsModal({ isOpen, onClose }: StepsModalProps) {
           </div>
 
           {/* Step Content */}
-          <div className="px-16 py-8 min-h-[450px] bg-white relative z-10">
+          <div className="px-4 sm:px-8 lg:px-16 py-6 sm:py-8 min-h-[350px] sm:min-h-[450px] bg-white relative z-10">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentStep}
@@ -137,12 +137,12 @@ export default function StepsModal({ isOpen, onClose }: StepsModalProps) {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-center"
+                className="flex flex-col lg:grid lg:grid-cols-4 gap-4 lg:gap-8 lg:items-center"
               >
                 {/* Left - Image */}
-                <div className="lg:col-span-1 flex justify-center">
-                  <div className="bg-slate-50 rounded-3xl p-6 shadow-lg">
-                    <div className="w-full h-80 bg-slate-100 rounded-2xl overflow-hidden">
+                <div className="lg:col-span-1 flex justify-center order-1">
+                  <div className="bg-slate-50 rounded-3xl p-4 sm:p-6 shadow-lg">
+                    <div className="w-full h-48 sm:h-64 lg:h-80 bg-slate-100 rounded-2xl overflow-hidden">
                       <Image 
                         src={steps[currentStep].image} 
                         alt={steps[currentStep].title}
@@ -155,25 +155,25 @@ export default function StepsModal({ isOpen, onClose }: StepsModalProps) {
                 </div>
 
                 {/* Center - Step Number */}
-                <div className="lg:col-span-1 flex justify-center">
-                  <div className="relative flex flex-col items-center">
-                    <div className="w-6 h-6 bg-slate-100 rounded-full mb-6 border border-slate-300 flex items-center justify-center">
+                <div className="lg:col-span-1 flex justify-center order-2 lg:order-2">
+                  <div className="relative flex lg:flex-col flex-row items-center lg:items-center justify-center">
+                    <div className="hidden lg:block w-6 h-6 bg-slate-100 rounded-full mb-6 border border-slate-300 flex items-center justify-center">
                       <div className="w-2 h-2 bg-slate-400 rounded-full"></div>
                     </div>
-                    <div className="w-px h-20 bg-slate-300 rounded-full"></div>
-                    <div className="relative -mt-10 z-10 bg-gradient-to-r from-violet-500 to-purple-600 text-white px-4 py-2 rounded-xl font-medium text-sm shadow-lg whitespace-nowrap">
+                    <div className="hidden lg:block w-px h-20 bg-slate-300 rounded-full"></div>
+                    <div className="bg-gradient-to-r from-violet-500 to-purple-600 text-white px-4 py-2 rounded-xl font-medium text-sm shadow-lg whitespace-nowrap lg:-mt-10 z-10 relative">
                       STEP {steps[currentStep].number}
                     </div>
-                    <div className="w-px h-20 bg-slate-300 rounded-full -mt-2"></div>
-                    <div className="w-6 h-6 bg-slate-100 rounded-full mt-6 border border-slate-300 flex items-center justify-center">
+                    <div className="hidden lg:block w-px h-20 bg-slate-300 rounded-full -mt-2"></div>
+                    <div className="hidden lg:block w-6 h-6 bg-slate-100 rounded-full mt-6 border border-slate-300 flex items-center justify-center">
                       <div className="w-2 h-2 bg-slate-400 rounded-full"></div>
                     </div>
                   </div>
                 </div>
 
                 {/* Right - Instructions */}
-                <div className="lg:col-span-2 space-y-6">
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 leading-tight">
+                <div className="lg:col-span-2 space-y-4 sm:space-y-6 order-3">
+                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 leading-tight">
                     {steps[currentStep].title}
                   </h3>
                   
@@ -187,7 +187,7 @@ export default function StepsModal({ isOpen, onClose }: StepsModalProps) {
                         className="flex items-start space-x-3"
                       >
                         <div className="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-slate-700 leading-relaxed text-base">{point}</p>
+                        <p className="text-slate-700 leading-relaxed text-sm sm:text-base">{point}</p>
                       </motion.div>
                     ))}
                   </div>

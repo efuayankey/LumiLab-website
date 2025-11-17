@@ -60,7 +60,7 @@ export default function Shop() {
       />
 
       <div className="container-width section-padding relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center max-w-6xl mx-auto">
           
           {/* Left Column - Product Images */}
           <motion.div
@@ -71,8 +71,8 @@ export default function Shop() {
             className="space-y-6"
           >
             {/* Main Product Image */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
-              <div className="w-full h-[28rem] bg-slate-100 rounded-2xl overflow-hidden flex items-center justify-center">
+            <div className="bg-white rounded-3xl p-4 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="w-full h-64 sm:h-80 lg:h-[28rem] bg-slate-100 rounded-2xl overflow-hidden flex items-center justify-center">
                 <Image 
                   src={productImages[selectedImage]} 
                   alt="LumiLab Testing Kit"
@@ -84,7 +84,7 @@ export default function Shop() {
             </div>
 
             {/* Thumbnail Carousel */}
-            <div className="flex space-x-4 justify-center">
+            <div className="flex space-x-2 sm:space-x-4 justify-center">
               {productImages.map((image, index) => (
                 <motion.div
                   key={index}
@@ -93,7 +93,7 @@ export default function Shop() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   onClick={() => setSelectedImage(index)}
-                  className={`w-20 h-20 bg-slate-100 rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer overflow-hidden ${
+                  className={`w-16 h-16 sm:w-20 sm:h-20 bg-slate-100 rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer overflow-hidden ${
                     selectedImage === index ? 'ring-2 ring-violet-500 ring-offset-2' : ''
                   }`}
                 >
@@ -119,10 +119,10 @@ export default function Shop() {
           >
             {/* Heading */}
             <div className="space-y-3">
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900 leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900 leading-tight">
                 LumiLab Testing Kit
               </h2>
-              <p className="text-lg text-slate-600">
+              <p className="text-base sm:text-lg text-slate-600">
                 Your membership includes one comprehensive kit collected once per year.
               </p>
             </div>
@@ -151,10 +151,10 @@ export default function Shop() {
             {/* Pricing */}
             <div className="space-y-4">
               <div className="space-y-1">
-                <div className="text-5xl lg:text-6xl font-bold text-violet-600">
+                <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-violet-600">
                   $199
                 </div>
-                <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">
+                <div className="text-xs sm:text-sm font-medium text-slate-500 uppercase tracking-wider">
                   PER TEST KIT
                 </div>
               </div>

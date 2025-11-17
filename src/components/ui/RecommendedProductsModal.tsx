@@ -144,11 +144,11 @@ export default function RecommendedProductsModal({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
           transition={{ type: "spring", duration: 0.5 }}
-          className="bg-white rounded-3xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden relative border border-slate-200"
+          className="bg-white rounded-3xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden relative border border-slate-200 mx-4"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="bg-slate-50 p-8 border-b border-slate-200 relative">
+          <div className="bg-slate-50 p-4 sm:p-8 border-b border-slate-200 relative">
             <button
               onClick={onClose}
               className="absolute top-6 right-6 p-2 hover:bg-slate-200 rounded-full transition-colors text-slate-600"
@@ -156,8 +156,8 @@ export default function RecommendedProductsModal({
               <X size={20} />
             </button>
             
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <h2 className="text-3xl font-bold text-slate-900">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+              <h2 className="text-xl sm:text-3xl font-bold text-slate-900 text-center">
                 Product Recommendations
               </h2>
               <span className="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm font-medium">
@@ -170,9 +170,9 @@ export default function RecommendedProductsModal({
           </div>
 
           {/* Products Grid */}
-          <div className="p-8 overflow-y-auto max-h-[60vh]">
+          <div className="p-4 sm:p-8 overflow-y-auto max-h-[60vh]">
             {recommendedProducts.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
                 {recommendedProducts.map((product, index) => (
                   <ProductCard 
                     key={product.name}
