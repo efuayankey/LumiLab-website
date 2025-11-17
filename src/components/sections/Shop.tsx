@@ -3,8 +3,12 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Check } from 'lucide-react';
+import { useState } from 'react';
+import AuthModal from '../auth/AuthModal';
 
 export default function Shop() {
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  
   const features = [
     "Collect your at-home skin sample using the enclosed sterile swabs.",
     "Ship samples with prepaid label for lab-grade microbiome analysis.",
@@ -65,35 +69,28 @@ export default function Shop() {
           >
             {/* Main Product Image */}
             <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
-              <div className="w-full h-96 bg-gradient-to-br from-violet-50 to-pink-50 rounded-2xl overflow-hidden">
-                <Image 
-                  src="/images/kit-main.jpg" 
-                  alt="LumiLab Skin Microbiome Discovery Kit"
-                  width={500}
-                  height={400}
-                  className="w-full h-full object-cover"
-                />
+              <div className="w-full h-96 bg-gradient-to-br from-violet-50 to-pink-50 rounded-2xl overflow-hidden flex items-center justify-center">
+                <div className="text-center p-8">
+                  <div className="w-32 h-32 bg-gradient-to-br from-violet-200 to-pink-200 rounded-2xl mx-auto mb-4 flex items-center justify-center">
+                    <span className="text-2xl font-bold text-violet-700">Kit</span>
+                  </div>
+                  <p className="text-slate-600 font-medium">LumiLab Testing Kit</p>
+                </div>
               </div>
             </div>
 
             {/* Thumbnail Carousel */}
             <div className="flex space-x-4 justify-center">
-              {thumbnails.map((thumb, index) => (
+              {[1, 2, 3].map((num, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="w-20 h-20 bg-white/70 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all cursor-pointer"
+                  className="w-20 h-20 bg-gradient-to-br from-violet-100 to-pink-100 rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center"
                 >
-                  <Image 
-                    src={thumb} 
-                    alt={`Kit angle ${index + 1}`}
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-cover"
-                  />
+                  <span className="text-sm font-medium text-violet-600">{num}</span>
                 </motion.div>
               ))}
             </div>
@@ -151,6 +148,7 @@ export default function Shop() {
 
               {/* CTA Button */}
               <motion.button
+                onClick={() => setAuthModalOpen(true)}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg"
@@ -162,6 +160,12 @@ export default function Shop() {
 
         </div>
       </div>
+
+      <AuthModal 
+        isOpen={authModalOpen} 
+        onClose={() => setAuthModalOpen(false)} 
+        initialMode="signup"
+      />
     </section>
   );
 }

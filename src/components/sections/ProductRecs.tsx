@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useState } from 'react';
+import AuthModal from '../auth/AuthModal';
 
 interface ProductData {
   name: string;
@@ -22,21 +24,21 @@ const demoData: ProductData[] = [
     score: 0.79,
     bullets: ["Suitable for dry skin", "Hydrating skin", "Lasting moisture"],
     priceTier: 1,
-    image: "/images/ponds.jpg"
+    image: "/images/cream 1.jpg"
   },
   {
     name: "Estée Lauder Re-Nutriv Moisturizer Cream",
     score: 0.96,
     bullets: ["Instantly moisturizing skin", "Lift Regenerating Firming", "Anti-Aging"],
     priceTier: 3,
-    image: "/images/estee-lauder.jpg"
+    image: "/images/cream 2.jpg"
   },
   {
     name: "Clinique Turnaround™ Revitalizing Moisturizer",
     score: 0.87,
     bullets: ["Instantly moisturizing skin", "Revitalizing skin", "Fragrance-free"],
     priceTier: 2,
-    image: "/images/clinique.jpg"
+    image: "/images/cream 3.jpg"
   }
 ];
 
@@ -72,7 +74,7 @@ function ProductCard({ product, delay }: ProductCardProps) {
             alt={product.name}
             width={300}
             height={200}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
         </div>
 
@@ -109,6 +111,8 @@ export default function ProductRecs({
   mode = 'demo', 
   data = demoData 
 }: ProductRecsProps) {
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  
   return (
     <section id="products" className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-violet-50 py-12 relative overflow-hidden">
       {/* Background decorative elements */}
@@ -182,6 +186,7 @@ export default function ProductRecs({
             >
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <motion.button
+                  onClick={() => setAuthModalOpen(true)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg"
@@ -202,6 +207,12 @@ export default function ProductRecs({
 
         </div>
       </div>
+
+      <AuthModal 
+        isOpen={authModalOpen} 
+        onClose={() => setAuthModalOpen(false)} 
+        initialMode="signup"
+      />
     </section>
   );
 }

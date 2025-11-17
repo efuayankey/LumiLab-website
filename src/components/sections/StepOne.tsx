@@ -81,11 +81,11 @@ export default function StepOne() {
             <div className="bg-slate-50 rounded-3xl p-8 shadow-soft">
               <div className="w-full h-80 bg-gradient-to-br from-violet-100 to-violet-50 rounded-2xl overflow-hidden">
                 <Image 
-                  src="/images/step1-kit.jpg" 
+                  src="/images/step1-kit.png" 
                   alt="LumiLab skincare testing kit"
                   width={400}
                   height={320}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>

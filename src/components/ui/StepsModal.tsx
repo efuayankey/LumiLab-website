@@ -14,7 +14,7 @@ const steps = [
   {
     number: 1,
     title: "Order the Kit & Collect Samples at Home",
-    image: "/images/step1-kit.jpg",
+    image: "/images/step1-kit.png",
     points: [
       "Purchase the kit via website",
       "Kit arrives in 1–2 business days with free US shipping.",
@@ -26,7 +26,7 @@ const steps = [
   {
     number: 2,
     title: "Lab & AI Analysis",
-    image: "/images/step2-lab.jpg",
+    image: "/images/step2-lab.jpeg",
     points: [
       "Genotype 50+ SNPs using qPCR.",
       "Sequence your skin microbiome.",
@@ -37,7 +37,7 @@ const steps = [
   {
     number: 3,
     title: "Personalized Results",
-    image: "/images/step3-results.jpg",
+    image: "/images/step3-results.png",
     points: [
       "Receive notification when results are ready (~1 week total).",
       "Log in to your secure dashboard.",
@@ -49,7 +49,7 @@ const steps = [
   {
     number: 4,
     title: "Ongoing Progress Tracking (Subscription)",
-    image: "/images/step4-tracking.jpg",
+    image: "/images/step4-tracking.png",
     points: [
       "Monitor how your skin changes over time.",
       "Monthly check-ins and AI recalibration.",
@@ -153,7 +153,7 @@ export default function StepsModal({ isOpen, onClose }: StepsModalProps) {
                         alt={steps[currentStep].title}
                         width={400}
                         height={300}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                       />
                     </div>
                   </div>

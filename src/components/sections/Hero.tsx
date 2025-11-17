@@ -1,9 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import AuthModal from '../auth/AuthModal';
 
 export default function Hero() {
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  
   return (
+    <>
     <section id="home" className="min-h-screen relative overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
@@ -55,7 +60,10 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <button className="btn-primary text-lg px-8 py-4 glow shadow-2xl hover:scale-105 transform transition-all">
+            <button 
+              onClick={() => setAuthModalOpen(true)}
+              className="btn-primary text-lg px-8 py-4 glow shadow-2xl hover:scale-105 transform transition-all"
+            >
               Get Started
             </button>
           </motion.div>
@@ -90,5 +98,12 @@ export default function Hero() {
         className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-pink-200/40 rounded-full blur-2xl"
       />
     </section>
+
+    <AuthModal 
+      isOpen={authModalOpen} 
+      onClose={() => setAuthModalOpen(false)} 
+      initialMode="signup"
+    />
+    </>
   );
 }

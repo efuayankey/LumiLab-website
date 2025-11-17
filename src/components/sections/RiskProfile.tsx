@@ -1,6 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import AuthModal from '../auth/AuthModal';
 
 interface RiskData {
   score: number;
@@ -96,6 +98,8 @@ export default function RiskProfile({
   data = demoData, 
   lastUpdated 
 }: RiskProfileProps) {
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  
   return (
     <section id="risk-profile" className="min-h-screen bg-gradient-to-br from-violet-100 via-white to-pink-50 py-12 relative overflow-hidden">
       {/* Background decorative elements */}
@@ -180,6 +184,7 @@ export default function RiskProfile({
             >
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <motion.button
+                  onClick={() => setAuthModalOpen(true)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg"
@@ -201,6 +206,12 @@ export default function RiskProfile({
 
         </div>
       </div>
+
+      <AuthModal 
+        isOpen={authModalOpen} 
+        onClose={() => setAuthModalOpen(false)} 
+        initialMode="signup"
+      />
     </section>
   );
 }

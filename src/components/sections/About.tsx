@@ -36,13 +36,10 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-wide">
               About LumiLab
             </h2>
-            <p className="text-xl md:text-2xl text-violet-600 italic font-medium">
-              Science meets self-care.
-            </p>
           </motion.div>
 
           {/* Content Paragraphs */}
-          <div className="space-y-8 text-left md:text-center max-w-3xl mx-auto">
+          <div className="space-y-8 text-center max-w-3xl mx-auto">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -50,9 +47,8 @@ export default function About() {
               viewport={{ once: true }}
               className="text-lg md:text-xl text-slate-700 leading-relaxed"
             >
-              At LumiLab, we believe great skincare starts with understanding your skin — not guessing. 
-              Our team of scientists and skincare lovers created LumiLab to bridge the gap between 
-              personalization and simplicity, helping you discover what truly works for you.
+              At Lumilab, we're building the future of personalized beauty through biotechnology, 
+              decoding the way your genes and microbiome interact with your skin.
             </motion.p>
 
             <motion.p
@@ -62,9 +58,10 @@ export default function About() {
               viewport={{ once: true }}
               className="text-lg md:text-xl text-slate-700 leading-relaxed"
             >
-              Through our skin microbiome testing kit and AI-driven LumiProfile, we deliver insights 
-              that turn confusion into clarity — so your routine feels effortless, balanced, and 
-              uniquely yours.
+              Using a simple saliva test and advanced sequencing technology, Lumilab analyzes hundreds 
+              of skin-related genetic markers and microbiome traits. Our proprietary algorithm then 
+              translates these insights into precise ingredient recommendations, helping you discover 
+              what your skin truly needs — not just what trends suggest.
             </motion.p>
 
             <motion.p
@@ -74,8 +71,18 @@ export default function About() {
               viewport={{ once: true }}
               className="text-lg md:text-xl text-slate-700 leading-relaxed"
             >
-              We combine science, design, and empathy to make skincare smarter, calmer, and 
-              beautifully simple.
+              Lumilab empowers you to understand your skin on a molecular level. The result is a 
+              science-driven, data-based skincare experience that evolves with you.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              viewport={{ once: true }}
+              className="text-lg md:text-xl text-violet-600 font-semibold leading-relaxed"
+            >
+              We're more than skincare. We're skin science, simplified.
             </motion.p>
           </div>
 

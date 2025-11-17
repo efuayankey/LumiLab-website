@@ -6,6 +6,7 @@ import About from '@/components/sections/About';
 import FAQ from '@/components/sections/FAQ';
 import Contact from '@/components/sections/Contact';
 import RiskProfile from '@/components/sections/RiskProfile';
+import Footer from '@/components/layout/Footer';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Shop />
       <FAQ />
       <Contact />
+      <Footer />
     </main>
   );
 }
