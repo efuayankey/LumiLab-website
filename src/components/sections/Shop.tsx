@@ -16,10 +16,13 @@ export default function Shop() {
     "Includes one complimentary consultation and free shipping."
   ];
 
-  const thumbnails = [
-    "/images/kit-angle1.jpg",
-    "/images/kit-angle2.jpg", 
-    "/images/kit-angle3.jpg"
+  const [selectedImage, setSelectedImage] = useState(0);
+  
+  const productImages = [
+    "/images/step1-kit.png",
+    "/images/step2-lab.jpeg", 
+    "/images/step1-kit.png",
+    "/images/step2-lab.jpeg"
   ];
 
   return (
@@ -69,28 +72,38 @@ export default function Shop() {
           >
             {/* Main Product Image */}
             <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
-              <div className="w-full h-96 bg-gradient-to-br from-violet-50 to-pink-50 rounded-2xl overflow-hidden flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 bg-gradient-to-br from-violet-200 to-pink-200 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-violet-700">Kit</span>
-                  </div>
-                  <p className="text-slate-600 font-medium">LumiLab Testing Kit</p>
-                </div>
+              <div className="w-full h-[28rem] bg-slate-100 rounded-2xl overflow-hidden flex items-center justify-center">
+                <Image 
+                  src={productImages[selectedImage]} 
+                  alt="LumiLab Testing Kit"
+                  width={500}
+                  height={400}
+                  className="w-full h-full object-contain scale-110"
+                />
               </div>
             </div>
 
             {/* Thumbnail Carousel */}
             <div className="flex space-x-4 justify-center">
-              {[1, 2, 3].map((num, index) => (
+              {productImages.map((image, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="w-20 h-20 bg-gradient-to-br from-violet-100 to-pink-100 rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center"
+                  onClick={() => setSelectedImage(index)}
+                  className={`w-20 h-20 bg-slate-100 rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer overflow-hidden ${
+                    selectedImage === index ? 'ring-2 ring-violet-500 ring-offset-2' : ''
+                  }`}
                 >
-                  <span className="text-sm font-medium text-violet-600">{num}</span>
+                  <Image 
+                    src={image} 
+                    alt={`Product view ${index + 1}`}
+                    width={80}
+                    height={80}
+                    className="w-full h-full object-cover"
+                  />
                 </motion.div>
               ))}
             </div>

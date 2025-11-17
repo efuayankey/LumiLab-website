@@ -10,37 +10,22 @@ export default function StepOne() {
   
   return (
     <>
-    <section id="how-it-works" className="min-h-screen bg-gradient-to-br from-violet-100 via-white to-violet-50 flex flex-col justify-center py-20 relative overflow-hidden">
-      {/* Glossy overlays */}
-      <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-violet-400/5 to-purple-500/8 z-0" />
-      <div className="absolute inset-0 bg-gradient-to-t from-violet-900/5 via-transparent to-violet-200/3 z-0" />
+    <section id="how-it-works" className="min-h-screen bg-white flex flex-col justify-center py-20 relative overflow-hidden">
+      {/* Subtle accent gradient - only at top */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-violet-50/30 to-transparent z-0" />
       
-      {/* Glossy floating elements */}
+      {/* Single subtle floating element */}
       <motion.div 
         animate={{ 
-          y: [0, -30, 0],
-          opacity: [0.3, 0.6, 0.3]
-        }}
-        transition={{ 
-          duration: 6, 
-          repeat: Infinity, 
-          ease: "easeInOut" 
-        }}
-        className="absolute top-1/4 left-1/5 w-40 h-40 bg-violet-200/20 rounded-full blur-3xl backdrop-blur-sm z-0"
-      />
-      
-      <motion.div 
-        animate={{ 
-          y: [0, 40, 0],
-          opacity: [0.2, 0.5, 0.2]
+          y: [0, -20, 0],
+          opacity: [0.1, 0.2, 0.1]
         }}
         transition={{ 
           duration: 8, 
           repeat: Infinity, 
-          ease: "easeInOut",
-          delay: 2
+          ease: "easeInOut" 
         }}
-        className="absolute bottom-1/3 right-1/4 w-32 h-32 bg-purple-200/25 rounded-full blur-2xl backdrop-blur-sm z-0"
+        className="absolute top-1/3 right-1/4 w-24 h-24 bg-violet-100/30 rounded-full blur-2xl z-0"
       />
       
       {/* Header Text Section */}
@@ -52,7 +37,7 @@ export default function StepOne() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 text-balance"
         >
-          Your Perfect Skin Match Without the Guesswork
+          How It Works
         </motion.h2>
         
         <motion.p 
@@ -62,7 +47,7 @@ export default function StepOne() {
           viewport={{ once: true }}
           className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto"
         >
-          mot so nhưng usp cua lumilab.
+          Get personalized skincare recommendations in just 4 simple steps.
         </motion.p>
       </div>
 
@@ -78,8 +63,8 @@ export default function StepOne() {
             viewport={{ once: true }}
             className="flex justify-center"
           >
-            <div className="bg-slate-50 rounded-3xl p-8 shadow-soft">
-              <div className="w-full h-80 bg-gradient-to-br from-violet-100 to-violet-50 rounded-2xl overflow-hidden">
+            <div className="bg-slate-50 rounded-3xl p-8 shadow-lg">
+              <div className="w-full h-96 bg-slate-100 rounded-2xl overflow-hidden">
                 <Image 
                   src="/images/step1-kit.png" 
                   alt="LumiLab skincare testing kit"
@@ -106,16 +91,16 @@ export default function StepOne() {
               </div>
               
               {/* Vertical gradient line */}
-              <div className="w-1 h-40 bg-gradient-to-b from-violet-300 via-violet-500 via-purple-500 to-violet-300 rounded-full shadow-md"></div>
+              <div className="w-1 h-40 bg-gradient-to-b from-slate-200 via-violet-400 to-slate-200 rounded-full shadow-md"></div>
               
-              {/* Main STEP badge */}
+              {/* Main STEP badge - MAIN PURPLE ACCENT */}
               <div className="relative -mt-20 z-10 bg-gradient-to-r from-violet-500 to-purple-600 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-2xl border-4 border-white backdrop-blur-sm">
                 <div className="absolute inset-0 bg-gradient-to-r from-violet-400/20 to-purple-500/20 rounded-2xl"></div>
                 <span className="relative z-10">STEP 1</span>
               </div>
               
               {/* Continuation line */}
-              <div className="w-1 h-40 bg-gradient-to-b from-violet-300 via-violet-500 via-purple-500 to-violet-300 rounded-full shadow-md -mt-4"></div>
+              <div className="w-1 h-40 bg-gradient-to-b from-slate-200 via-violet-400 to-slate-200 rounded-full shadow-md -mt-4"></div>
               
               {/* Bottom decorative element */}
               <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-violet-400 rounded-full mt-4 shadow-lg flex items-center justify-center">
@@ -138,27 +123,27 @@ export default function StepOne() {
             
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-violet-400 rounded-full mt-2 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-slate-700 leading-relaxed">Purchase the kit via website</p>
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-violet-400 rounded-full mt-2 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-slate-700 leading-relaxed">Kit arrives in 1–2 business days with free US shipping.</p>
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-violet-400 rounded-full mt-2 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-slate-700 leading-relaxed">Follow the guided instructions</p>
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-violet-400 rounded-full mt-2 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-slate-700 leading-relaxed">Seal everything and ship back using the prepaid labels.</p>
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-violet-400 rounded-full mt-2 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-slate-700 leading-relaxed">Track sample status in the app.</p>
               </div>
             </div>
@@ -167,7 +152,7 @@ export default function StepOne() {
             <div className="mt-8">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="bg-violet-100 hover:bg-violet-150 text-violet-700 border border-violet-200 px-6 py-3 rounded-xl font-medium text-base shadow-soft hover:shadow-md transition-all"
+                className="bg-white hover:bg-slate-50 text-violet-600 border-2 border-violet-200 hover:border-violet-300 px-6 py-3 rounded-xl font-medium text-base shadow-sm hover:shadow-md transition-all"
               >
                 See All Steps →
               </button>

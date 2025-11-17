@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import AuthModal from '../auth/AuthModal';
+import RecommendedProductsModal from '../ui/RecommendedProductsModal';
 
 interface RiskData {
   score: number;
@@ -99,6 +100,7 @@ export default function RiskProfile({
   lastUpdated 
 }: RiskProfileProps) {
   const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [recommendedProductsOpen, setRecommendedProductsOpen] = useState(false);
   
   return (
     <section id="risk-profile" className="min-h-screen bg-gradient-to-br from-violet-100 via-white to-pink-50 py-12 relative overflow-hidden">
@@ -182,24 +184,15 @@ export default function RiskProfile({
               viewport={{ once: true }}
               className="text-center space-y-6"
             >
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex justify-center">
                 <motion.button
-                  onClick={() => setAuthModalOpen(true)}
+                  onClick={() => setRecommendedProductsOpen(true)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg"
                 >
-                  Try LumiLab
+                  See Recommended Products
                 </motion.button>
-                
-                <motion.a
-                  href="/products"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="bg-white hover:bg-slate-50 text-slate-900 font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl border border-slate-200 transition-all duration-200 text-lg inline-block"
-                >
-                  See product recommendations →
-                </motion.a>
               </div>
             </motion.div>
           )}
@@ -211,6 +204,16 @@ export default function RiskProfile({
         isOpen={authModalOpen} 
         onClose={() => setAuthModalOpen(false)} 
         initialMode="signup"
+      />
+
+      <RecommendedProductsModal
+        isOpen={recommendedProductsOpen}
+        onClose={() => setRecommendedProductsOpen(false)}
+        riskProfile={{
+          wrinkle: data.wrinkle.score,
+          irritation: data.irritation.score,
+          hyperpigmentation: data.hyperpigmentation.score
+        }}
       />
     </section>
   );
